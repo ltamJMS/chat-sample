@@ -119,6 +119,6 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 </style>
