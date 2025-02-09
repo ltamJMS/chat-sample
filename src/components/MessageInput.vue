@@ -24,6 +24,7 @@ export default {
     };
   },
   methods: {
+
     sendMessage() {
       if (this.newMessage.trim() !== "") {
         this.$emit("send-message", this.newMessage);
