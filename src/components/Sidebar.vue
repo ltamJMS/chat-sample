@@ -4,16 +4,16 @@
     :class="['sidebar', { 'w-1/4': !isCollapsed, 'w-16': isCollapsed }]"
     class="h-full bg-gray-800 text-white flex flex-col justify-between p-4"
   >
-    <!-- Top Section with Collapse Button -->
+    <!-- Section 1: Collapse btn -->
     <div class="flex items-center justify-start w-full">
       <button @click="toggleSidebar" class="collapse-toggle text-white">
         <font-awesome-icon :icon="isCollapsed ? 'angle-right' : 'angle-left'" />
       </button>
     </div>
 
-    <!-- Middle Section with Recent Chats -->
+    <!-- Section 2: Recent Conversations -->
     <div v-if="!isCollapsed" class="px-10 flex-grow">
-      <h2 class="title text-xl font-bold mb-4">Recent Chats</h2>
+      <h2 class="title text-xl font-bold mb-4">Recent Conversations</h2>
       <ChatSection
         v-for="(chatList, period) in chatPeriods"
         :key="period"
@@ -24,7 +24,7 @@
       />
     </div>
 
-    <!-- Bottom Section with Profile and Settings Icons -->
+    <!-- Section 3: Profile + Settings -->
     <div class="flex flex-col items-center space-y-4">
       <button aria-label="Profile" class="profile-icon text-white">
         <font-awesome-icon icon="user" size="lg" />
@@ -45,12 +45,11 @@ export default {
   },
   data() {
     return {
-      isCollapsed: false, // state to track if the sidebar is collapsed or not
+      isCollapsed: false,
       chats: [
-        { name: "Chat 1", timestamp: new Date() - 10000 },
-        { name: "Chat 2", timestamp: new Date() - 86400000 },
-        { name: "Chat 3", timestamp: new Date() - 172800000 },
-        // Add more chat objects with Unix timestamps as needed
+        { name: "Sidebar menu for quick-access", timestamp: new Date() - 10000 },
+        { name: "Unix timestamps as needed use", timestamp: new Date() - 86400000 },
+        { name: "More chat objects with Clerks", timestamp: new Date() - 172800000 },
       ],
     };
   },
@@ -91,12 +90,10 @@ export default {
       return new Date(timestamp) > pastDate;
     },
     renameChat(chatIndex) {
-      // Implement rename functionality
-      console.log("Renaming chat with index:", chatIndex);
+      console.log("1111", chatIndex);
     },
     deleteChat(chatIndex) {
-      // Implement delete functionality
-      console.log("Deleting chat with index:", chatIndex);
+      console.log("1111", chatIndex);
     },
   },
 };
