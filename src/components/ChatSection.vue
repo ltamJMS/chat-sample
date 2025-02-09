@@ -11,7 +11,7 @@
         <button class="flex-grow text-left py-2 px-3 rounded hover:bg-gray-700">
           {{ chat.name }}
         </button>
-        <span class="ml-2">
+        <!-- <span class="ml-2">
           <font-awesome-icon
             icon="pen"
             class="cursor-pointer hover:text-gray-400"
@@ -22,7 +22,7 @@
             class="cursor-pointer hover:text-gray-400 ml-2"
             @click="$emit('deleteChat', index)"
           />
-        </span>
+        </span> -->
       </li>
     </ul>
   </div>
