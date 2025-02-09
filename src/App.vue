@@ -22,9 +22,8 @@ export default {
   data() {
     return {
       messages: [
-        "Hello",
+        "With all the hype around AI tools like Chat-GPT, I felt it could benefit from a redesign to elevate the user experience. For me, it feels like a good way to show how features could be implemented.",
         "How can I help you?",
-        "I need information about Vue.js.",
       ],
     };
   },

@@ -11,15 +11,9 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      messages: [
-        "Hello",
-        "Hello",
-        "Hello",
-      ],
-    };
-  },
+export default {  
+  props: {  
+    messages: Array,  
+  },  
 };
 </script>
