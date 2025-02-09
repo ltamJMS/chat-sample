@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="h-screen flex">
+    <Sidebar />
+    <div class="flex flex-col w-3/4">
+      <ChatDisplay :messages="messages" />
+      <MessageInput @send-message="addMessage" />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from "./components/Sidebar.vue";
+import ChatDisplay from "./components/ChatDisplay.vue";
+import MessageInput from "./components/MessageInput.vue";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Sidebar,
+    ChatDisplay,
+    MessageInput,
+  },
+  data() {
+    return {
+      messages: [
+        "Hello",
+        "How can I help you?",
+        "I need information about Vue.js.",
+      ],
+    };
+  },
+  methods: {
+    addMessage(newMessage) {
+      this.messages.push(newMessage);
+    },
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/* Add additional styles if necessary */
 </style>
