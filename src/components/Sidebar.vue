@@ -26,8 +26,21 @@
     </div>
 
     <div class="p-3 border-t">
-      <button class="w-full justify-start px-2 py-1 text-sm flex">Thêm đồng nghiệp</button>
+  <button class="w-full justify-start px-2 py-1 text-sm flex items-center space-x-3">
+    <!-- Avatar với icon -->
+    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200">
+      <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path>
+      </svg>
     </div>
+    <!-- Text -->
+    <div class="text-left">
+      <p class="text-sm">Thêm đồng nghiệp</p>
+      <p class="text-xs text-gray-400 mt-1">Mời thành viên vào không gian làm việc ABC</p>
+    </div>
+  </button>
+</div>
+
   </div>
 </template>
 
