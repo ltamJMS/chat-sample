@@ -13,6 +13,10 @@ import {
   faUser,
   faPaperPlane,
   faRedo,
+  faPlus,
+  faFolderOpen,
+  faEnvelopeOpen,
+  faRegistered
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add new icons
@@ -24,7 +28,11 @@ library.add(
   faCog,
   faUser,
   faPaperPlane,
-  faRedo
+  faRedo,
+  faPlus,
+  faFolderOpen,
+  faEnvelopeOpen,
+  faRegistered
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
