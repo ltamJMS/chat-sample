@@ -1,5 +1,5 @@
 <template>
-  <header class="h-12 border-b flex items-center px-4 justify-between relative">
+  <header class="h-14 shadow-sm flex items-center px-4 justify-between relative">
     <!-- Dropdown chọn model (bên trái) -->
     <div class="flex items-center gap-2 relative">
       <div class="cursor-pointer flex items-center gap-1 dropdown-container" @click="toggleModelDropdown">

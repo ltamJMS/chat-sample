@@ -1,11 +1,11 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div
-    class="border-r flex flex-col bg-gray-50 transition-all duration-300"
+    class="flex flex-col bg-gray-50 transition-all duration-300"
     :class="{ 'w-1/6': !isCollapsed, 'w-16': isCollapsed }"
   >
     <!-- Header với nút Collapse, Search, Create Chat -->
-    <div class="p-3 flex items-center justify-between border-b">
+    <div class="p-3 flex items-center justify-between shadow-sm">
       <!-- Nút Collapse (Bên trái) -->
       <button
         ref="tooltipCollapse"
