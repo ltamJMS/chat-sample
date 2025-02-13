@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-3xl mx-auto space-y-4">
+  <div class="max-w-4xl mx-auto space-y-4">
     <div
       v-for="(message, index) in messages"
       :key="index"
@@ -9,10 +9,10 @@
       }"
     >
       <div
-        :class="message.sender === 'user' ? 'bg-blue-100' : 'bg-gray-100'"
-        class="p-4 rounded-lg max-w-xs"
+        :class="message.sender === 'user' ? 'bg-gray-100 max-w-xs' : ''"
+        class="p-4 rounded-lg "
       >
-        <p class="text-sm">{{ message.text }}</p>
+        <p class="text-base">{{ message.text }}</p>
       </div>
     </div>
   </div>

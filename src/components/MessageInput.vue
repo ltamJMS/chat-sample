@@ -4,7 +4,7 @@
       <textarea
         v-model="message"
         @keydown="handleKeydown"
-        class="w-full h-14 p-3 bg-transparent border-none resize-none focus:outline-none focus:ring-0"
+        class="w-full h-14 p-3 bg-transparent border-none resize-none focus:outline-none focus:ring-0 text-base"
         placeholder="Nhắn tin cho ChatGPT"
       ></textarea>
 
