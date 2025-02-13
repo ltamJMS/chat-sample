@@ -208,13 +208,14 @@
 <script>
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
-
+import { dataFake } from "@/components/fakeData";
 export default {
   data() {
     return {
-      openDropdown: null, // Lưu trạng thái dropdown nào đang mở
-      selectedIndex: null, // Lưu trạng thái index được chọn
-      isCollapsed: false, // Trạng thái sidebar có bị thu gọn hay không
+      openDropdown: null,
+      selectedIndex: null,
+      isCollapsed: false,
+      dataFake,
     };
   },
   methods: {
@@ -227,7 +228,9 @@ export default {
     },
     selectItem(index) {
       this.selectedIndex = index;
-      console.log("Selected item:", index);
+      console.log("Selected history item:", index);
+      // Emit event "selectHistory" kèm theo messages của history được chọn
+      this.$emit("selectHistory", this.dataFake[index].messages);
     },
     shareItem(index) {
       alert(`Chia sẻ mục ${index + 1}`);

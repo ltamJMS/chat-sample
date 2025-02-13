@@ -1,6 +1,7 @@
+<!-- App.vue -->
 <template>
   <div class="h-screen bg-white flex">
-    <Sidebar />
+    <Sidebar @selectHistory="handleSelectHistory" />
     <div class="flex-1 flex flex-col">
       <HeaderBar />
       <div class="flex-1 p-4 overflow-y-auto">
@@ -53,7 +54,6 @@ export default {
       const botMessage = { text: "", sender: "bot", isTyping: true };
       messages.value.push(botMessage);
 
-      // Delay 0.1s ms typing effect
       setTimeout(() => {
         let currentIndex = 0;
         const interval = setInterval(() => {
@@ -69,9 +69,14 @@ export default {
       }, 100);
     };
 
+    const handleSelectHistory = (selectedMessages) => {
+      messages.value = selectedMessages;
+    };
+
     return {
       messages,
       handleSendMessage,
+      handleSelectHistory,
     };
   },
 };
