@@ -16,7 +16,8 @@ import {
   faPlus,
   faFolderOpen,
   faEnvelopeOpen,
-  faRegistered
+  faRegistered,
+  faEllipsis
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add new icons
@@ -32,7 +33,8 @@ library.add(
   faPlus,
   faFolderOpen,
   faEnvelopeOpen,
-  faRegistered
+  faRegistered,
+  faEllipsis
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");

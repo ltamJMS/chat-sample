@@ -16,7 +16,8 @@
 
       <!-- ChatGPT -->
       <button class="w-full justify-start px-2 text-sm flex items-center space-x-3">
-        <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-200 overflow-hidden">          <img src="/images/chatgpt.png" alt="ChatGPT" class="w-full h-full object-cover">
+        <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-200 overflow-hidden"> <img
+            src="/images/chatgpt.png" alt="ChatGPT" class="w-full h-full object-cover">
         </div>
         <span>ChatGPT</span>
       </button>
@@ -37,14 +38,11 @@
         <span>Khám phá GPT</span>
       </button>
 
-
       <div class="pt-4 pb-2 px-2 text-xs font-medium">Dự án</div>
       <button class="w-full justify-start text-sm px-2 py-1 rounded flex items-center space-x-2 hover:bg-gray-100">
         <font-awesome-icon :icon="['fas', 'folder-open']" class="text-gray-600 w-4 h-4" />
         <span>Dự án mới</span>
       </button>
-
-
 
       <div class="pt-4 pb-2 px-2 text-xs font-medium">Hôm nay</div>
       <button class="w-full justify-start text-sm px-2 py-1 rounded flex">
@@ -58,15 +56,9 @@
             @click="selectItem(index)">
             <!-- Nội dung chat -->
             <span class="truncate">Chat History Item {{ index + 1 }}</span>
-
-            <!-- Icon More -->
-            <button @click.stop="toggleDropdown(index)" class="p-1 rounded-full hover:bg-gray-200">
-              <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="2"></circle>
-                <circle cx="19" cy="12" r="2"></circle>
-                <circle cx="5" cy="12" r="2"></circle>
-              </svg>
-            </button>
+            <div  @click.stop="toggleDropdown(index)" class="w-6 h-6 flex items-center justify-center">
+                <font-awesome-icon :icon="['fas', 'ellipsis']" class="text-gray-400 w-4 h-4" />
+              </div>
           </button>
 
           <!-- Dropdown -->
