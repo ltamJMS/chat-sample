@@ -106,7 +106,167 @@
       </button>
 
       <!-- Hôm nay -->
-      <div class="pt-4 pb-2 px-2 text-xs font-medium">Hôm nay</div>
+      <div class="pt-4 pb-2 px-2 text-xs font-medium sticky top-0 bg-gray-50 z-10 px-2 py-2">Hôm nay</div>
+      <div class="space-y-2">
+        <div
+          v-for="(item, index) in 100"
+          :key="'today-' + index"
+          class="relative"
+        >
+          <button
+            class="w-full justify-between text-sm px-2 py-1 flex items-center truncate"
+            :class="{
+              'bg-gray-300': selectedIndex === index,
+              'hover:bg-gray-100': selectedIndex !== index
+            }"
+            @click="selectItem(index)"
+          >
+            <span class="truncate">Chat History Item {{ index + 1 }}</span>
+            <div
+              @click.stop="toggleDropdown(index)"
+              class="w-6 h-6 flex items-center justify-center"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'ellipsis']"
+                class="text-gray-400 w-4 h-4"
+              />
+            </div>
+          </button>
+
+          <!-- Dropdown -->
+          <div
+            v-if="openDropdown === index"
+            class="absolute right-0 mt-1 w-40 bg-white border rounded shadow-lg z-10"
+            @click.stop
+          >
+            <button
+              class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-gray-100 text-sm"
+              @click="shareItem(index)"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'share']"
+                class="text-gray-500 w-3 h-3"
+              />
+              <span>Chia sẻ</span>
+            </button>
+
+            <button
+              class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-gray-100 text-sm"
+              @click="renameItem(index)"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'pen']"
+                class="text-gray-500 w-3 h-3"
+              />
+              <span>Đổi tên</span>
+            </button>
+
+            <button
+              class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-gray-100 text-sm"
+              @click="archiveItem(index)"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'box-archive']"
+                class="text-gray-500 w-3 h-3"
+              />
+              <span>Lưu trữ</span>
+            </button>
+
+            <button
+              class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-red-100 text-sm text-red-500"
+              @click="deleteItem(index)"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'trash']"
+                class="text-red-500 w-3 h-3"
+              />
+              <span>Xóa</span>
+            </button>
+          </div>
+        </div>
+      </div>
+            <!-- Hôm nay -->
+            <div class="pt-4 pb-2 px-2 text-xs font-medium sticky top-0 bg-gray-50 z-10 px-2 py-2">7 ngày trước</div>
+      <div class="space-y-2">
+        <div
+          v-for="(item, index) in 100"
+          :key="'today-' + index"
+          class="relative"
+        >
+          <button
+            class="w-full justify-between text-sm px-2 py-1 flex items-center truncate"
+            :class="{
+              'bg-gray-300': selectedIndex === index,
+              'hover:bg-gray-100': selectedIndex !== index
+            }"
+            @click="selectItem(index)"
+          >
+            <span class="truncate">Chat History Item {{ index + 1 }}</span>
+            <div
+              @click.stop="toggleDropdown(index)"
+              class="w-6 h-6 flex items-center justify-center"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'ellipsis']"
+                class="text-gray-400 w-4 h-4"
+              />
+            </div>
+          </button>
+
+          <!-- Dropdown -->
+          <div
+            v-if="openDropdown === index"
+            class="absolute right-0 mt-1 w-40 bg-white border rounded shadow-lg z-10"
+            @click.stop
+          >
+            <button
+              class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-gray-100 text-sm"
+              @click="shareItem(index)"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'share']"
+                class="text-gray-500 w-3 h-3"
+              />
+              <span>Chia sẻ</span>
+            </button>
+
+            <button
+              class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-gray-100 text-sm"
+              @click="renameItem(index)"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'pen']"
+                class="text-gray-500 w-3 h-3"
+              />
+              <span>Đổi tên</span>
+            </button>
+
+            <button
+              class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-gray-100 text-sm"
+              @click="archiveItem(index)"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'box-archive']"
+                class="text-gray-500 w-3 h-3"
+              />
+              <span>Lưu trữ</span>
+            </button>
+
+            <button
+              class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-red-100 text-sm text-red-500"
+              @click="deleteItem(index)"
+            >
+              <font-awesome-icon
+                :icon="['fas', 'trash']"
+                class="text-red-500 w-3 h-3"
+              />
+              <span>Xóa</span>
+            </button>
+          </div>
+        </div>
+      </div>
+            <!-- Hôm nay -->
+            <div class="pt-4 pb-2 px-2 text-xs font-medium sticky top-0 bg-gray-50 z-10 px-2 py-2">30 ngày trước</div>
       <div class="space-y-2">
         <div
           v-for="(item, index) in 100"
