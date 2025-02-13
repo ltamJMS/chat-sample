@@ -34,7 +34,11 @@ import {
   faRobot,
   faSlidersH,
   faUserPlus,
-  faSignOutAlt
+  faSignOutAlt,
+  faVolumeUp,
+  faCopy,
+  faSync,
+  faExchangeAlt
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add new icons
@@ -68,7 +72,11 @@ library.add(
   faRobot,
   faSlidersH,
   faUserPlus,
-  faSignOutAlt
+  faSignOutAlt,
+  faVolumeUp,
+  faCopy,
+  faSync,
+  faExchangeAlt
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");

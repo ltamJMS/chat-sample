@@ -31,44 +31,42 @@ export default {
   setup() {
     const messages = ref([]);
 
-    // Mảng chứa các tin nhắn của bot
     const botMessages = [
-      "Xin chào! Rất vui được gặp bạn. Bạn cần hỗ trợ gì hôm nay?",
-      "Chào bạn, tôi có thể giúp bạn giải đáp thắc mắc hoặc tư vấn sản phẩm. Hãy cho tôi biết bạn cần gì nhé!",
-      "Hello! I'm here to assist you. Feel free to ask any questions you may have.",
-      "Hi there! If you have any concerns or inquiries, just let me know and I'll be happy to help.",
-      "Greetings! How can I be of service today? Your satisfaction is my priority.",
-      "Xin chào, bạn có thể cho tôi biết thêm chi tiết về vấn đề bạn gặp phải không?",
-      "Chào bạn, đừng ngần ngại chia sẻ, tôi sẵn sàng hỗ trợ bạn mọi lúc.",
-      "Hello, could you please provide more details so I can better assist you?",
-      "Hi, feel free to explain your issue further. I'm here to help!",
-      "こんにちは！今日はどのようなお手伝いをしましょうか？",
-      "もしもし、何かご不明な点があればお知らせください。",
-      "お客様のご質問に迅速に対応いたします。何かご相談はありますか？",
-      "ご用件を詳しく教えていただければ、より良いサポートが可能です。",
-      "どのようなことでも結構ですので、お気軽にお尋ねください。",
-      "Xin chào, hãy cùng khám phá giải pháp tối ưu cho vấn đề của bạn!",
-      "Chào bạn, luôn có những giải pháp hữu ích cho mọi vấn đề. Hãy cùng tìm hiểu nhé!",
-      "Hello! Let's explore the best solutions for your queries together.",
-      "Hi, I'm excited to help you resolve any issues. Tell me more about what's on your mind.",
-      "Greetings! Your questions matter. I'm here to provide answers and support.",
-      "Xin chào, tôi luôn nỗ lực để mang lại trải nghiệm tốt nhất cho bạn. Có điều gì cần giúp đỡ không?",
-      "Chào bạn, tôi sẵn sàng hỗ trợ bạn 24/7. Hãy để tôi giúp bạn tìm ra giải pháp!"
+      "Xin chào! Rất vui được gặp bạn hôm nay. Mình rất mong muốn hỗ trợ bạn. Bạn cần tìm kiếm thông tin hay yêu cầu hỗ trợ gì đặc biệt không?",
+      "Chào bạn, mình ở đây để giúp bạn giải đáp mọi thắc mắc hoặc tư vấn về các sản phẩm mà bạn đang quan tâm. Hãy chia sẻ với mình bạn đang cần gì nhé!",
+      "Xin chào, bạn có thể cho mình biết thêm chi tiết về vấn đề bạn đang gặp phải không? Việc hiểu rõ hơn sẽ giúp mình hỗ trợ bạn tốt nhất có thể.",
+      "Chào bạn, đừng ngần ngại chia sẻ bất kỳ điều gì đang khiến bạn băn khoăn. Mình sẵn sàng lắng nghe và hỗ trợ bạn mọi lúc, mọi nơi.",
+      "Xin chào, hãy cùng nhau khám phá những giải pháp tối ưu cho những vấn đề mà bạn đang gặp phải! Mình rất mong muốn giúp bạn vượt qua chúng.",
+      "Chào bạn, luôn có những giải pháp hữu ích và phù hợp cho mọi vấn đề. Hãy cùng mình tìm hiểu các phương án tốt nhất nhé!",
+      "Hello! Let's work together to explore the best solutions for any queries you might have. Your concerns are important to us.",
+      "Hi, I'm really excited to help you resolve any issues you're facing. Please tell me more about what's on your mind so I can assist you effectively.",
+      "Xin chào, tôi luôn nỗ lực để mang lại trải nghiệm tốt nhất có thể cho bạn. Nếu có điều gì bạn cần giúp đỡ hoặc thắc mắc, đừng ngần ngại nhé.",
+      "Chào bạn, mình luôn sẵn sàng hết mình để hỗ trợ bạn 24/7. Hãy để mình giúp bạn tìm ra giải pháp tối ưu nhất cho những vấn đề của bạn!"
     ];
 
     const handleSendMessage = (msg) => {
-      // Gửi tin nhắn từ người dùng
       messages.value.push({ text: msg, sender: "user" });
       
-      // Chọn ngẫu nhiên 1 tin nhắn trong mảng botMessages
       const randomIndex = Math.floor(Math.random() * botMessages.length);
       const randomBotMessage = botMessages[randomIndex];
-      
-      // Gửi tin nhắn từ bot
-      messages.value.push({
-        text: randomBotMessage,
-        sender: "bot",
-      });
+
+      const botMessage = { text: "", sender: "bot", isTyping: true };
+      messages.value.push(botMessage);
+
+      // Delay 0.1s ms typing effect
+      setTimeout(() => {
+        let currentIndex = 0;
+        const interval = setInterval(() => {
+          currentIndex++;
+          botMessage.text = randomBotMessage.slice(0, currentIndex);
+          messages.value = [...messages.value];
+          if (currentIndex >= randomBotMessage.length) {
+            clearInterval(interval);
+            botMessage.isTyping = false;
+            messages.value = [...messages.value];
+          }
+        }, 20);
+      }, 100);
     };
 
     return {
