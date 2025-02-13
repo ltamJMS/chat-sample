@@ -1,31 +1,34 @@
 <template>
-  <div class="max-w-3xl mx-auto space-y-6">
-    <div class="bg-gray-50 p-4 rounded-lg">
-      <p class="text-sm">i wanna generate UI using html, what is the best AI tool to do it</p>
+  <div class="max-w-3xl mx-auto space-y-4">
+    <div
+      v-for="(message, index) in messages"
+      :key="index"
+      :class="{
+        'flex justify-end': message.sender === 'user',
+        'flex justify-start': message.sender === 'bot'
+      }"
+    >
+      <div
+        :class="message.sender === 'user' ? 'bg-blue-100' : 'bg-gray-100'"
+        class="p-4 rounded-lg max-w-xs"
+      >
+        <p class="text-sm">{{ message.text }}</p>
+      </div>
     </div>
-
-    <div class="space-y-4">
-      <p>For generating HTML-based UIs, there are a few AI tools and platforms that could be really helpful:</p>
-
-      <ol class="space-y-4 list-decimal pl-4">
-        <li>
-          <strong>Figma with AI Plugins:</strong> Figma is a popular design tool that also integrates with AI plugins to help generate code from UI designs.
-        </li>
-        <li>
-          <strong>Builder.ai:</strong> Builder.ai is an AI-driven platform for creating custom web and mobile applications without needing to code.
-        </li>
-      </ol>
-    </div>
-
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ChatDisplay'
+  name: "ChatDisplay",
+  props: {
+    messages: {
+      type: Array,
+      default: () => [],
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* Optional: Add custom styles if needed */
 </style>
