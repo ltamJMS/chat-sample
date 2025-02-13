@@ -17,7 +17,12 @@ import {
   faFolderOpen,
   faEnvelopeOpen,
   faRegistered,
-  faEllipsis
+  faEllipsis,
+  faMagnifyingGlass,
+  faPenToSquare,
+  faBars,
+  faChevronRight
+
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add new icons
@@ -34,7 +39,11 @@ library.add(
   faFolderOpen,
   faEnvelopeOpen,
   faRegistered,
-  faEllipsis
+  faEllipsis,
+  faMagnifyingGlass,
+  faPenToSquare,
+  faBars,
+  faChevronRight
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
