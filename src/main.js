@@ -25,7 +25,9 @@ import {
   faBoxArchive,
   faShare,
   faGlobe,
-  faArrowUp
+  faArrowUp,
+  faChevronDown,
+  faArrowUpFromBracket
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add new icons
@@ -50,7 +52,9 @@ library.add(
   faBoxArchive,
   faShare,
   faGlobe,
-  faArrowUp
+  faArrowUp,
+  faChevronDown,
+  faArrowUpFromBracket
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
