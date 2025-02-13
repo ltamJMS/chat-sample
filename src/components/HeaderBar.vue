@@ -51,15 +51,15 @@
             <span class="text-sm text-gray-600">chungletrong17@gmail.com</span>
             <font-awesome-icon :icon="['fas', 'plus']" class="w-3 h-3 text-gray-500 mr-2" />
           </div>
-          <div class="px-4 py-2">
+          <div class="py-2">
             <!-- Section 1: Workspace -->
             <div class="mb-2 border-t pt-2 mx-2">
               <ul>
-                <li class="py-1 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
                   <font-awesome-icon :icon="['fas', 'building']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>ABC</span>
                 </li>
-                <li class="py-1 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
                   <font-awesome-icon :icon="['fas', 'user']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>Tài khoản cá nhân</span>
                 </li>
@@ -68,23 +68,23 @@
             <!-- Section 2: Quản lý -->
             <div class="mb-2 border-t pt-2 mx-2">
               <ul>
-                <li class="py-1 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
                   <font-awesome-icon :icon="['fas', 'layer-group']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>Quản lý không gian làm việc</span>
                 </li>
-                <li class="py-1 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
                   <font-awesome-icon :icon="['fas', 'tasks']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>Nhiệm vụ</span>
                 </li>
-                <li class="py-1 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
                   <font-awesome-icon :icon="['fas', 'robot']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>GPT của tôi</span>
                 </li>
-                <li class="py-1 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
                   <font-awesome-icon :icon="['fas', 'sliders-h']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>Tùy chỉnh ChatGPT</span>
                 </li>
-                <li class="py-1 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
                   <font-awesome-icon :icon="['fas', 'cog']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>Cài đặt</span>
                 </li>
@@ -93,11 +93,11 @@
             <!-- Section 3: Khác -->
             <div class="mb-2 border-t pt-2 mx-2">
               <ul>
-                <li class="py-1 text-base  hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
                   <font-awesome-icon :icon="['fas', 'user-plus']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>Thêm đồng nghiệp</span>
                 </li>
-                <li class="py-1 text-base  hover:bg-gray-100 cursor-pointer flex items-center space-x-2">
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
                   <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>Tải tiện ích tìm kiếm cho ChatGPT</span>
                 </li>
@@ -106,8 +106,8 @@
             <!-- Section 4: Đăng xuất -->
             <div class="border-t pt-1 mx-2">
               <ul>
-                <li class="py-2 text-base  hover:bg-gray-100 cursor-pointer text-red-400 flex items-center space-x-2 my-2 mt-2">
-                  <font-awesome-icon :icon="['fas', 'sign-out-alt']" class="w-4 h-4" />
+                <li class="px-4 py-2 text-base hover:bg-gray-100 cursor-pointer flex items-center space-x-2 rounded">
+                  <font-awesome-icon :icon="['fas', 'sign-out-alt']" class="w-4 h-4 text-gray-500 mr-2" />
                   <span>Đăng xuất</span>
                 </li>
               </ul>
