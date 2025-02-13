@@ -24,7 +24,7 @@
     <!-- Danh sách Chat -->
     <div v-if="!isCollapsed" class="flex-1 overflow-y-auto p-2 space-y-2">
       <!-- ChatGPT -->
-      <button class="w-full justify-start px-2 text-sm flex items-center space-x-3"
+      <button class="w-full justify-start px-2 text-sm flex items-center space-x-3 truncate"
         :class="{ 'justify-center': isCollapsed }">
         <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-200 overflow-hidden">
           <img src="/images/chatgpt.png" alt="ChatGPT" class="w-full h-full object-cover" />
@@ -33,7 +33,7 @@
       </button>
 
       <!-- SORA -->
-      <button class="w-full justify-start px-2 text-sm flex items-center space-x-3"
+      <button class="w-full justify-start px-2 text-sm flex items-center space-x-3 truncate"
         :class="{ 'justify-center': isCollapsed }">
         <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-200 overflow-hidden">
           <img src="/images/sora.png" alt="SORA" class="w-full h-full object-cover" />
@@ -42,7 +42,7 @@
       </button>
 
       <!-- Khám phá GPT -->
-      <button class="w-full justify-start px-2 text-sm flex items-center space-x-3"
+      <button class="w-full justify-start px-2 text-sm flex items-center space-x-3 truncate"
         :class="{ 'justify-center': isCollapsed }">
         <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-200">
           <font-awesome-icon :icon="['fas', 'registered']" class="text-gray-400 w-4 h-4" />
@@ -52,7 +52,8 @@
 
       <!-- Dự án -->
       <div class="pt-4 pb-2 px-2 text-xs font-medium">Dự án</div>
-      <button class="w-full justify-start text-sm px-2 py-1 rounded flex items-center space-x-2 hover:bg-gray-100">
+      <button
+        class="w-full justify-start text-sm px-2 py-1 rounded flex items-center space-x-2 hover:bg-gray-100 truncate">
         <font-awesome-icon :icon="['fas', 'folder-open']" class="text-gray-600 w-4 h-4" />
         <span>Dự án mới</span>
       </button>
@@ -71,17 +72,34 @@
           </button>
 
           <!-- Dropdown -->
-          <div v-if="openDropdown === index" class="absolute right-0 mt-1 w-32 bg-white border rounded shadow-lg z-10"
+          <div v-if="openDropdown === index" class="absolute right-0 mt-1 w-40 bg-white border rounded shadow-lg z-10"
             @click.stop>
-            <button class="block w-full text-left px-3 py-1 hover:bg-gray-100 text-sm" @click="shareItem(index)">Chia
-              sẻ</button>
-            <button class="block w-full text-left px-3 py-1 hover:bg-gray-100 text-sm" @click="renameItem(index)">Đổi
-              tên</button>
-            <button class="block w-full text-left px-3 py-1 hover:bg-gray-100 text-sm" @click="archiveItem(index)">Lưu
-              trữ</button>
-            <button class="block w-full text-left px-3 py-1 hover:bg-red-100 text-sm text-red-500"
-              @click="deleteItem(index)">Xóa</button>
+            <button class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-gray-100 text-sm"
+              @click="shareItem(index)">
+              <font-awesome-icon :icon="['fas', 'share']" class="text-gray-500 w-3 h-3" />
+              <span>Chia sẻ</span>
+            </button>
+
+            <button class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-gray-100 text-sm"
+              @click="renameItem(index)">
+              <font-awesome-icon :icon="['fas', 'pen']" class="text-gray-500 w-3 h-3" />
+              <span>Đổi tên</span>
+            </button>
+
+            <button class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-gray-100 text-sm"
+              @click="archiveItem(index)">
+              <font-awesome-icon :icon="['fas', 'box-archive']" class="text-gray-500 w-3 h-3" />
+              <span>Lưu trữ</span>
+            </button>
+
+            <button
+              class="block w-full text-left px-3 py-2 flex items-center space-x-2 hover:bg-red-100 text-sm text-red-500"
+              @click="deleteItem(index)">
+              <font-awesome-icon :icon="['fas', 'trash']" class="text-red-500 w-3 h-3" />
+              <span>Xóa</span>
+            </button>
           </div>
+
         </div>
       </div>
     </div>
@@ -92,12 +110,13 @@
         <font-awesome-icon :icon="['fas', 'envelope-open']" class="text-gray-600 w-4 h-4" />
       </div>
       <button class="w-full justify-start px-2 py-1 text-sm flex items-center space-x-3">
-        <div class="text-left">
-          <p class="text-sm">Thêm đồng nghiệp</p>
-          <p class="text-xs text-gray-400 mt-1">Mời thành viên vào không gian làm việc ABC</p>
+        <div class="text-left w-full">
+          <p class="text-sm truncate">Thêm đồng nghiệp</p>
+          <p class="text-xs text-gray-400 mt-1 truncate">Mời thành viên vào không gian làm việc ABC</p>
         </div>
       </button>
     </div>
+
   </div>
 </template>
 

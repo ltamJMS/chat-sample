@@ -21,8 +21,9 @@ import {
   faMagnifyingGlass,
   faPenToSquare,
   faBars,
-  faChevronRight
-
+  faChevronRight,
+  faBoxArchive,
+  faShare
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add new icons
@@ -43,7 +44,9 @@ library.add(
   faMagnifyingGlass,
   faPenToSquare,
   faBars,
-  faChevronRight
+  faChevronRight,
+  faBoxArchive,
+  faShare
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
