@@ -23,7 +23,9 @@ import {
   faBars,
   faChevronRight,
   faBoxArchive,
-  faShare
+  faShare,
+  faGlobe,
+  faArrowUp
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add new icons
@@ -46,7 +48,9 @@ library.add(
   faBars,
   faChevronRight,
   faBoxArchive,
-  faShare
+  faShare,
+  faGlobe,
+  faArrowUp
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");

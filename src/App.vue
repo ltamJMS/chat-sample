@@ -25,7 +25,7 @@
         <ChatDisplay />
       </div>
 
-      <div class="border-t p-4">
+      <div class="p-4">
         <MessageInput />
       </div>
     </div>
