@@ -27,7 +27,14 @@ import {
   faGlobe,
   faArrowUp,
   faChevronDown,
-  faArrowUpFromBracket
+  faArrowUpFromBracket,
+  faBuilding,
+  faLayerGroup,
+  faTasks,
+  faRobot,
+  faSlidersH,
+  faUserPlus,
+  faSignOutAlt
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add new icons
@@ -54,7 +61,14 @@ library.add(
   faGlobe,
   faArrowUp,
   faChevronDown,
-  faArrowUpFromBracket
+  faArrowUpFromBracket,
+  faBuilding,
+  faLayerGroup,
+  faTasks,
+  faRobot,
+  faSlidersH,
+  faUserPlus,
+  faSignOutAlt
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
