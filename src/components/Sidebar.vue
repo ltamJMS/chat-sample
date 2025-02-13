@@ -23,9 +23,9 @@
     </div>
 
     <!-- Danh sách Chat -->
-    <div v-if="!isCollapsed" class="flex-1 overflow-y-auto p-2 space-y-2">
+    <div v-if="!isCollapsed" class="flex-1 overflow-y-auto h-full px-2 pb-2 space-y-2">
       <!-- ChatGPT -->
-      <button class="w-full justify-start px-2 text-sm flex items-center space-x-3 truncate"
+      <button class="w-full justify-start px-2 mt-4 text-sm flex items-center space-x-3 truncate"
         :class="{ 'justify-center': isCollapsed }">
         <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-200 overflow-hidden">
           <img src="/images/chatgpt.png" alt="ChatGPT" class="w-full h-full object-cover" />
@@ -61,14 +61,15 @@
 
       <!-- Hôm nay -->
       <div class="pt-4 pb-2 px-2 text-xs font-medium sticky top-0 bg-gray-50 z-10 px-2 py-2">Hôm nay</div>
-      <div class="space-y-2">
-        <div v-for="(item, index) in 100" :key="'today-' + index" class="relative">
-          <button class="w-full justify-between text-sm px-2 py-1 flex items-center truncate" :class="{
+      <div class="space-y-1">
+        <div v-for="(item, index) in 30" :key="'today-' + index" class="relative">
+          <button class="w-full justify-between text-sm px-2 py-2 flex items-center truncate rounded-lg group" :class="{
             'bg-gray-300': selectedIndex === index,
             'hover:bg-gray-100': selectedIndex !== index
           }" @click="selectItem(index)">
-            <span class="truncate">Chat History Item {{ index + 1 }}</span>
-            <div @click.stop="toggleDropdown(index)" class="w-6 h-6 flex items-center justify-center">
+            <span class="truncate ml-4">Chat History Item {{ index + 1 }}</span>
+            <div @click.stop="toggleDropdown(index)"
+              class="w-4 h-4 flex items-center justify-center hidden group-hover:flex">
               <font-awesome-icon :icon="['fas', 'ellipsis']" class="text-gray-400 w-4 h-4" />
             </div>
           </button>
@@ -103,16 +104,18 @@
           </div>
         </div>
       </div>
-      <!-- Hôm nay -->
-      <div class="pt-4 pb-2 px-2 text-xs font-medium sticky top-0 bg-gray-50 z-10 px-2 py-2">7 ngày trước</div>
-      <div class="space-y-2">
-        <div v-for="(item, index) in 100" :key="'today-' + index" class="relative">
-          <button class="w-full justify-between text-sm px-2 py-1 flex items-center truncate" :class="{
+
+      <!-- 7 ngày trước đó -->
+      <div class="pt-4 pb-2 px-2 text-xs font-medium sticky top-0 bg-gray-50 z-10 px-2 py-2">7 ngày trước đó</div>
+      <div class="space-y-1">
+        <div v-for="(item, index) in 30" :key="'today-' + index" class="relative">
+          <button class="w-full justify-between text-sm px-2 py-2 flex items-center truncate rounded-lg group" :class="{
             'bg-gray-300': selectedIndex === index,
             'hover:bg-gray-100': selectedIndex !== index
           }" @click="selectItem(index)">
-            <span class="truncate">Chat History Item {{ index + 1 }}</span>
-            <div @click.stop="toggleDropdown(index)" class="w-6 h-6 flex items-center justify-center">
+            <span class="truncate ml-4">Chat History Item {{ index + 1 }}</span>
+            <div @click.stop="toggleDropdown(index)"
+              class="w-4 h-4 flex items-center justify-center hidden group-hover:flex">
               <font-awesome-icon :icon="['fas', 'ellipsis']" class="text-gray-400 w-4 h-4" />
             </div>
           </button>
@@ -147,16 +150,18 @@
           </div>
         </div>
       </div>
-      <!-- Hôm nay -->
-      <div class="pt-4 pb-2 px-2 text-xs font-medium sticky top-0 bg-gray-50 z-10 px-2 py-2">30 ngày trước</div>
-      <div class="space-y-2">
-        <div v-for="(item, index) in 100" :key="'today-' + index" class="relative">
-          <button class="w-full justify-between text-sm px-2 py-1 flex items-center truncate" :class="{
+
+      <!-- 30 ngày trước đó -->
+      <div class="pt-4 pb-2 px-2 text-xs font-medium sticky top-0 bg-gray-50 z-10 px-2 py-2">30 ngày trước đó</div>
+      <div class="space-y-1">
+        <div v-for="(item, index) in 30" :key="'today-' + index" class="relative">
+          <button class="w-full justify-between text-sm px-2 py-2 flex items-center truncate rounded-lg group" :class="{
             'bg-gray-300': selectedIndex === index,
             'hover:bg-gray-100': selectedIndex !== index
           }" @click="selectItem(index)">
-            <span class="truncate">Chat History Item {{ index + 1 }}</span>
-            <div @click.stop="toggleDropdown(index)" class="w-6 h-6 flex items-center justify-center">
+            <span class="truncate ml-4">Chat History Item {{ index + 1 }}</span>
+            <div @click.stop="toggleDropdown(index)"
+              class="w-4 h-4 flex items-center justify-center hidden group-hover:flex">
               <font-awesome-icon :icon="['fas', 'ellipsis']" class="text-gray-400 w-4 h-4" />
             </div>
           </button>
