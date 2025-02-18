@@ -1,5 +1,12 @@
 <template>
   <header class="h-14 shadow-sm flex items-center px-4 justify-between relative">
+    <!-- Navigation Links -->
+    <nav class="flex flex-row items-center justify-center space-x-4">
+      <router-link class="text-gray-600 hover:text-blue-500" to="/">Home</router-link>
+      <router-link class="text-gray-600 hover:text-blue-500" to="/about">About</router-link>
+      <router-link class="text-gray-600 hover:text-blue-500" to="/contact">Contact</router-link>
+    </nav>
+
     <!-- Dropdown chọn model (bên trái) -->
     <div class="flex items-center gap-2 relative">
       <div class="cursor-pointer flex items-center gap-1 dropdown-container" @click="toggleModelDropdown">

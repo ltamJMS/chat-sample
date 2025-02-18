@@ -5,6 +5,7 @@
     <div class="flex-1 flex flex-col">
       <HeaderBar />
       <div class="flex-1 p-4 overflow-y-auto">
+        <router-view></router-view>
         <ChatDisplay :messages="messages" />
       </div>
       <div class="p-4">
